@@ -1,4 +1,3 @@
-
 #State
 # Il numero di entry di ogni possibile stato è 256, dati dal prodotto 16x4x4. 16 è dovuto al fatto che ogni riquadro può
 # contenere 0 o un multiplo di 2 (2^i con 0<i<16). In base allo stato l'entry avrà valore 0 o 1.

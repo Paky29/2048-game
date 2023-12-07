@@ -2,7 +2,6 @@ import numpy as np
 
 from env import Game2048Env
 
-
 class QLearningAgent:
     def __init__(self, state_size, action_size, alpha=0.2, gamma=0.9, epsilon=0.9, xi=0.99):
         self.state_size = state_size

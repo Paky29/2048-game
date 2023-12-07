@@ -105,6 +105,7 @@ class Game2048Env(gym.Env):
         #prendo nuovamente solo i valori diversi da 0 così da eliminare gli spazi vuoti tra i numeri uniti e spostare
         #tutti i numeri verso sinistra o destra a seconda dell'azione eseguita
         row = row[row > 0]
+
         #aggiungo un pad di 0 alla fine della riga per ottenere 4 celle
         row = np.pad(row, (0, (4 - len(row))), mode='constant')
 
