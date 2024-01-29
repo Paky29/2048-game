@@ -33,8 +33,7 @@ class Board:
 
     def __init__(self):
         # Inizializzazione della finestra principale
-        #print("Board initialized")
-
+        # print("Board initialized")
 
         self.n = 4
         self.window = tkinter.Tk()
@@ -43,7 +42,7 @@ class Board:
 
         self.gameArea = tkinter.Frame(self.window)
         self.board = []  # Rappresentazione della griglia di gioco come una matrice di etichette
-        self.gridCell = [[0] * 4 for i in range(4)] # Rappresentazione della griglia di gioco come una matrice numerica
+        self.gridCell = [[0] * 4 for i in range(4)]  # Rappresentazione della griglia di gioco come una matrice numerica
         self.compress = False
         self.merge = False
         self.moved = False
@@ -75,7 +74,6 @@ class Board:
     def transpose(self):
         self.gridCell = [list(t) for t in zip(*self.gridCell)]
 
-
     # Metodo per comprimere la griglia spostando tutte le caselle vuote a sinistra
     def compressGrid(self):
         self.compress = False
@@ -90,7 +88,6 @@ class Board:
                     cnt += 1
         self.gridCell = temp
 
-
     # Metodo per unire le caselle con lo stesso valore nella stessa riga
     def mergeGrid(self):
         self.merge = False
@@ -101,7 +98,6 @@ class Board:
                     self.gridCell[i][j + 1] = 0
                     self.score += self.gridCell[i][j]
                     self.merge = True
-
 
     # Metodo per generare casualmente una nuova casella vuota con valore 2
     def random_cell(self):
