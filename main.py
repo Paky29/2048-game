@@ -8,7 +8,7 @@
 
 #Reward
 # Il premio è dato dalla somma dei valori di tutte le celle fuse dopo l'azione.
-from agent import QLearningAgent
+#from agent import QLearningAgent
 from env import Game2048Env
 
 
@@ -47,30 +47,6 @@ def play_game():
         else:
             print("Input non valido. Usa W/A/S/D per muoverti o Q per uscire.")
 
-def play_agent():
-    env = Game2048Env()
-    agent = QLearningAgent(state_size=2048, action_size=4)
-
-    # Esegui l'addestramento per un certo numero di episodi
-    num_episodes = 1000
-    for episode in range(num_episodes):
-        state = env.reset()
-        total_reward = 0
-
-        while True:
-            action = agent.actuate(state)
-            print(action)
-            next_state, reward, done, _ = env.step(action)
-            agent.percept(state, action, next_state, reward)
-
-            total_reward += reward
-            state = next_state
-
-            if done:
-                break
-
-        print(f"Episode: {episode + 1}, Total Reward: {total_reward}")
-# Avvia il gioco
 
 if __name__ == '__main__':
     play_game()
