@@ -56,6 +56,10 @@ class Game2048Env(gymnasium.Env):
     # Implementation of gym interface:
     def step(self, action):
         """Perform one step of the game. This involves moving and adding a new tile."""
+
+        #pre_empty = self.get_empty_cell(self.Matrix)
+        # print("Celle vuote step: ", self.get_empty_cell(self.Matrix))
+
         try:
             score = self.move(action)
             self.score += score
@@ -68,7 +72,15 @@ class Game2048Env(gymnasium.Env):
         except IllegalMove:
             print("Illegal move")
             done = False
-            reward = -10  # No reward for an illegal move. We could even set a negative value to penalize the agent.
+            reward = 0
+
+        '''        
+            post_empty = self.get_empty_cell(self.Matrix)
+        # print("Celle vuote post step: ", self.get_empty_cell(self.Matrix))
+
+        if post_empty < pre_empty and post_empty < 5:
+            reward = reward - 10
+        '''
 
         # Return observation (board-matrix state), reward, done and info dictionary
         return reward, done
@@ -107,7 +119,6 @@ class Game2048Env(gymnasium.Env):
         assert empties
         empty_idx = self.np_random.choice(len(empties))
         empty = empties[empty_idx]
-        logging.debug("Adding %s at %s", val, (empty[0], empty[1]))
         self.set(empty[0], empty[1], val)
 
     def get(self, x, y):
@@ -248,6 +259,13 @@ class Game2048Env(gymnasium.Env):
             except IllegalMove:
                 pass
         return True
+
+    '''
+    @staticmethod
+    def get_empty_cell(matrix):
+        """Count the number of zeros in the given matrix."""
+        return np.count_nonzero(matrix == 0)
+    '''
 
     def get_board(self):
         """Get the whole board-matrix, useful for testing."""
