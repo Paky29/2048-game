@@ -12,6 +12,7 @@ The project, carried out for the Artificial Intelligence course, ended with the 
 ### Model 1
 The first model was made with Keras v3.0. 
 [Source code](model/ModelOne.py)
+
 ![Model](data/graphs/model1_plot.png)
 
 
@@ -19,6 +20,7 @@ The first model was made with Keras v3.0.
 ### Model 2
 The second model uses CNNs and was made with Torch   
 [Source code](model/ModelTwo.py)
+
 ![Model](data/graphs/model2_plot.png)
 
 
