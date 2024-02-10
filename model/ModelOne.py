@@ -2,7 +2,7 @@ import numpy as np
 from keras.models import Sequential
 from keras.layers import Dense, Flatten
 from keras.optimizers.legacy import SGD
-from keras_impl.environment.Game2048Env import IllegalMove
+from environment.Game2048Env import IllegalMove
 from keras.utils import plot_model
 from rl.memory import SequentialMemory
 

@@ -1,7 +1,7 @@
 import keras
-from keras_impl.environment.Game2048Env import *
-from keras_impl.model.ModelOne import ModelOne
-from keras_impl.model.ModelTwo import ModelTwo
+
+from environment.Game2048Env import Game2048Env
+from model.ModelTwo import ModelTwo
 from collections import Counter
 
 import matplotlib
@@ -20,7 +20,7 @@ class CustomAgent:
         self.match_score = []
         self.loss_history = []
 
-        #self.dqn_agent = ModelOne(env=self.env)
+        # self.dqn_agent = ModelOne(env=self.env)
         self.dqn_agent = ModelTwo(env=self.env)
 
     def train(self, num_games):

@@ -4,7 +4,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 from rl.memory import SequentialMemory
-from keras_impl.environment.Game2048Env import IllegalMove
+from environment.Game2048Env import IllegalMove
 
 
 class DeepQLearningNetwork(nn.Module):
